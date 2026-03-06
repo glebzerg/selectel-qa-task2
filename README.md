@@ -198,10 +198,15 @@ pytest --collect-only
 pytest
 ```
 
+### Запустить только быстрые API-тесты (без браузера, ~30 сек)
+```bash
+pytest -m api -v
+```
+
 ### Запустить только smoke-тесты (быстрая проверка, ~1–2 мин)
 
 ```bash
-pytest -m smoke
+pytest -m smoke -v
 ```
 
 ### Запустить конкретный файл
@@ -214,12 +219,6 @@ pytest tests/test_main_page.py
 
 ```bash
 pytest -k "test_main_page_returns_200"
-```
-
-### Только API-тесты (без браузера, быстро)
-
-```bash
-pytest -m api
 ```
 
 ### Только UI-тесты (с браузером)
