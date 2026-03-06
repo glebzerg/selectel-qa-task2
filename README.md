@@ -3,6 +3,8 @@
 Автоматизированное тестирование сайта [selectel.ru](https://selectel.ru).  
 Выполнено в рамках тестового задания на стажировку по направлению **QA**.
 
+[Задание 1](https://docs.google.com/document/d/1OUg4c4GcLjo1KAl4j0Av4-n3--mkAZIl-Hs4Cmzfg3A/edit?tab=t.0)
+
 ---
 
 ## 📋 Содержание
