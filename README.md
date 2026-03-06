@@ -146,22 +146,34 @@ selectel-qa-tests/
 # 1. Клонировать репозиторий
 git clone https://github.com/glebzerg/selectel-qa-task2.git
 cd selectel-qa-task2
+```
 
+```bash
 # 2. Создать виртуальное окружение (рекомендуется)
 python -m venv venv
+```
 
+```bash
 # Активация на macOS/Linux:
 source venv/bin/activate
+```
 
+```bash
 # Активация на Windows:
 venv\Scripts\activate
+```
 
+```bash
 # 3. Установить зависимости
 pip install -r requirements.txt
+```
 
+```bash
 # 4. Установить браузеры Playwright
 playwright install chromium
+```
 
+```bash
 # 5. Скопировать конфиг окружения (опционально)
 cp .env.example .env
 ```
