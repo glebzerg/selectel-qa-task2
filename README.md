@@ -83,7 +83,7 @@
 
 | Инструмент | Роль | Почему выбран |
 |---|---|---|
-| **Python 3.12** | Язык | Стандарт в QA-автоматизации, читаемый синтаксис |
+| **Python 3.11.9** | Язык | Стандарт в QA-автоматизации, читаемый синтаксис |
 | **Playwright** | Браузерная автоматизация | Надёжнее Selenium, встроенные ожидания, поддержка мобильных |
 | **pytest** | Тест-фреймворк | Гибкие фикстуры, параметризация, маркеры |
 | **pytest-playwright** | Интеграция | Playwright-фикстуры из коробки |
@@ -144,7 +144,7 @@ selectel-qa-tests/
 
 ```bash
 # 1. Клонировать репозиторий
-git clone https://github.com/YOUR_USERNAME/selectel-qa-tests.git
+git clone https://github.com/glebzerg/selectel-qa-tests.git
 cd selectel-qa-tests
 
 # 2. Создать виртуальное окружение (рекомендуется)
