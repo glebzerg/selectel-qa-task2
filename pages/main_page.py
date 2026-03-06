@@ -74,7 +74,7 @@ class MainPage(BasePage):
         return self.page.locator(self.HEADER).is_visible()
 
     def is_footer_visible(self) -> bool:
-        return self.page.locator(self.FOOTER).is_visible()
+    return self.page.locator("footer, [class*='footer__nav']").first.is_visible()
 
     def is_h1_visible(self) -> bool:
         return self.page.locator(self.HERO_HEADING).first.is_visible()
