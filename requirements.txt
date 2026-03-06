@@ -1,7 +1,7 @@
 # Тестовый фреймворк
 pytest==8.3.5
 pytest-html==4.1.1          # HTML-отчёт
-pytest-playwright==0.6.6    # Playwright-интеграция для pytest
+pytest-playwright==0.7.2    # Playwright-интеграция для pytest
 pytest-xdist==3.6.1         # Параллельный запуск тестов
 
 # Браузерная автоматизация
