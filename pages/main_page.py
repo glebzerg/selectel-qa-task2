@@ -48,9 +48,8 @@ class MainPage(BasePage):
     # ── Действия ──────────────────────────────────────────────────────────────
 
     def open(self) -> "MainPage":
-        """Открывает главную страницу и дожидается загрузки."""
         self.navigate("/")
-        self.page.wait_for_load_state("domcontentloaded")
+        self.page.wait_for_load_state("networkidle")
         return self
 
     def get_heading(self) -> str:
