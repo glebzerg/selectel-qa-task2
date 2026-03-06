@@ -144,8 +144,8 @@ selectel-qa-tests/
 
 ```bash
 # 1. Клонировать репозиторий
-git clone https://github.com/glebzerg/selectel-qa-tests.git
-cd selectel-qa-tests
+git clone https://github.com/glebzerg/selectel-qa-task2.git
+cd selectel-qa-task2
 
 # 2. Создать виртуальное окружение (рекомендуется)
 python -m venv venv
