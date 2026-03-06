@@ -252,7 +252,7 @@ class TestJavaScriptErrors:
             e for e in js_errors
             if not any(third_party in e.lower()
                       for third_party in ["google", "facebook", "yandex", "analytics",
-                                          "metrika", "jivosite", "intercom"])
+                     "metrika", "jivosite", "intercom", "mindbox"])
         ]
 
         assert len(own_errors) == 0, (
