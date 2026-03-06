@@ -29,7 +29,7 @@ class MainPage(BasePage):
     PRODUCTS_SECTION = "[class*='product'], [class*='service'], [class*='catalog']"
 
     # Футер
-    FOOTER = "footer"
+    FOOTER = "footer, [class*='footer'], [id*='footer']"
     FOOTER_LINKS = "footer a"
     FOOTER_LOGO = "footer img[alt*='Selectel'], footer a[href='/']"
 
