@@ -1,0 +1,62 @@
+name: 🧪 Selectel QA Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Запуск каждый день в 09:00 UTC (12:00 МСК)
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # Ручной запуск из GitHub UI
+
+jobs:
+  test:
+    name: Run Tests (${{ matrix.test-group }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        test-group:
+          - smoke
+          - regression
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🎭 Install Playwright browsers
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: 🧪 Run ${{ matrix.test-group }} tests
+        run: |
+          mkdir -p reports
+          pytest -m ${{ matrix.test-group }} \
+            --html=reports/report-${{ matrix.test-group }}.html \
+            --self-contained-html \
+            -v
+        env:
+          SELECTEL_BASE_URL: https://selectel.ru
+          HEADLESS: true
+
+      - name: 📊 Upload test report
+        uses: actions/upload-artifact@v4
+        if: always()  # Загружаем даже при падении тестов
+        with:
+          name: test-report-${{ matrix.test-group }}
+          path: reports/
+          retention-days: 14
